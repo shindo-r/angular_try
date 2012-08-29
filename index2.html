@@ -7,9 +7,13 @@
  <script src="controller.js"></script>
 </head>
 <body ng-controller="FactListController">
-  <div ng-repeat="fact in fact_list">
-    <p> {{fact.name}} </P>
+
+  Search: <input ng-model="query">
+  
+  <div ng-repeat="person in persons | filter:query">
+    {{person.name}} ( {{person.age}} )
   </div>
+
 </div>
 </body>
 </html>
