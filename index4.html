@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+ <meta charset="utf-8">
+ <title>Step2</title>
+ <script src="angular-1.0.1.js"></script>
+ <script src="controller.js"></script>
+</head>
+<body ng-controller="FactListController">
+
+  Name: <input ng-model="name"/> 
+  Age: <input ng-model="age"/>
+  <button ng:click="save(name,age)">Save</button>
+  <hr/>
+  Search: <input ng-model="query"/>
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="name">Name</option>
+    <option value="age">Age</option>
+  </select>
+  
+  <ul>
+    <li ng-repeat="person in persons | filter:query | orderBy:orderProperty">
+      {{person.name}} ( {{person.age}} )
+    </li>
+  </ul>
+
+</body>
+</html>
+
+
